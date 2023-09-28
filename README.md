@@ -27,7 +27,7 @@ For example:
     {
       "title": "🔗 Open test case in TestRail",
       "url": "https://testrail.example.com/index.php?/cases/view/T",
-      "testIdPatter": "\\[T(\\d+)\\]"
+      "testIdPattern": "\\[T(\\d+)\\]"
     }
   ]
 }
