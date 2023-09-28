@@ -59,10 +59,9 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "xpretest": "npm run compile && npm run lint",
+    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "mocha -r ts-node/register --ui tdd out/test/**/*.test.js",
-    "t": "node ./out/test/run-test.js"
+    "test": "mocha -r ts-node/register --ui tdd out/test/**/*.test.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.1",
