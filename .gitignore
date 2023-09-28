@@ -1,3 +1,4 @@
 node_modules/
 out/
 doorman-*.vsix
+.DS_Store
