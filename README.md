@@ -2,6 +2,8 @@
 
 Doorman is a simple, lightweight VSCode extension that allows you to link and open test cases from you favorite test management tool directly in VSCode.
 
+![Demo](assets/doorman-demo.gif)
+
 ## Features
 
 - Link test cases from your test management tool directly in VSCode
@@ -20,17 +22,78 @@ This extension contributes the following settings:
 
 For example:
 
+Your test management tool is TestRail and test case format is `[S123]`. So, your test looks like this:
+
+```js
+it('[S123] should verify the title', () => {
+  // ...
+});
+```
+
+Then you can add the following configuration in your `.vscode/settings.json`:
+
 ```json
-// .vscode/settings.json
 {
   "doorman.configurations": [
     {
       "title": "🔗 Open test case in TestRail",
-      "url": "https://testrail.example.com/index.php?/cases/view/T",
-      "testIdPattern": "\\[T(\\d+)\\]"
+      "url": "https://testrail.example.com/index.php?/cases/view/S",
+      "testIdPattern": "\\[S(\\d+)\\]"
     }
   ]
 }
+```
+
+After that you will see the following title in the code block:
+
+![example image](assets/demo.png)
+
+By clicking on the title you will open the test case in your default browser.
+
+The URL will be generated based on the configuration. In this case it will be `https://testrail.example.com/index.php?/cases/view/S123`.
+
+There is some useful regular expressions for popular test case formats:
+
+- `[S123]` - `\\[S(\\d+)\\]`
+
+```js
+it('[S123] should do something', () => {});
+```
+
+- `S123` - `S(\\d+)`
+
+```js
+it('S123 should do something', () => {});
+```
+
+- `S-123` - `S-(\\d+)`
+
+```js
+it('S-123 should do something', () => {});
+```
+
+- `S_123` - `S_(\\d+)`
+
+```js
+it('S_123 should do something', () => {});
+```
+
+- `.S123.` - `.S(\\d+)\\.`
+
+```js
+it('.S123. should do something', () => {});
+```
+
+- `@S-123` - `@S-(\\d+)`
+
+```js
+it('@S-123 should do something', () => {});
+```
+
+- `:S123:` - `:S(\\d+):`
+
+```js
+it(':S123: should do something', () => {});
 ```
 
 ## Author
