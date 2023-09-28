@@ -40,6 +40,7 @@ class TestCodeLensProvider implements vscode.CodeLensProvider {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  console.info('Doorman activated');
   const config = vscode.workspace.getConfiguration('doorman');
   const configurations = config.get('configurations');
 
