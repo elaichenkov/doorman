@@ -16,7 +16,9 @@
     "Testing"
   ],
   "activationEvents": [
-    "onLanguage:javascript"
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "workspaceContains:**/*.feature"
   ],
   "main": "./out/extension.js",
   "contributes": {
