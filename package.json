@@ -2,8 +2,8 @@
   "name": "doorman",
   "displayName": "doorman",
   "publisher": "elaichenkov",
-  "description": "Doorman is a simple, lightweight VSCode extension that allows you to link and open test cases from you favorite test management tool directly in VSCode.",
-  "version": "0.0.7",
+  "description": "Doorman is a simple, lightweight VSCode extension that allows you to link and open test cases from your favorite test case management tool directly in VSCode.",
+  "version": "0.0.8",
   "icon": "assets/logo-icon.png",
   "repository": {
     "type": "git",
