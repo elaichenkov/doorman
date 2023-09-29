@@ -1,6 +1,6 @@
 # Doorman
 
-Doorman is a simple, lightweight VSCode extension that allows you to link and open test cases from you favorite test management tool directly in VSCode.
+Doorman is a simple, lightweight VSCode extension that allows you to link and open test cases from your favorite test case management tool directly in VSCode.
 
 ![Demo](assets/doorman-demo.gif)
 
@@ -58,6 +58,12 @@ There is some useful regular expressions for popular test case formats:
 
 ```js
 it('[S123] should do something', () => {});
+```
+
+- `@S123` - `@S(\\d+)`
+
+```js
+it('@S123 should do something', () => {});
 ```
 
 - `S123` - `S(\\d+)`
